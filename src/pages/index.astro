@@ -1,73 +1,314 @@
 ---
-// This area is for JavaScript setup
-const pageTitle = "Hari Kiran | Portfolio";
+// src/pages/index.astro
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <style>
-      /* Simple styling to make it look professional */
-      body {
-        font-family: system-ui, -apple-system, sans-serif;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        line-height: 1.6;
-        color: #333;
-      }
-      h1 { font-size: 2.5rem; margin-bottom: 0.2rem; color: #111; }
-      h2 { margin-top: 2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-      .role { color: #666; font-size: 1.25rem; font-weight: 500; margin-top: 0; }
-      .contact-link { margin-right: 1rem; color: #0066cc; text-decoration: none; }
-      .contact-link:hover { text-decoration: underline; }
-    </style>
+    <meta name="generator" content={Astro.generator} />
+    <title>Resume | Hari Kiran Pendurthi</title>
+    <meta name="description" content="Professional Resume of Hari Kiran Pendurthi - Software Developer" />
   </head>
   <body>
+    <div class="resume-container">
+      <header>
+        <h1>HARI KIRAN PENDURTHI</h1>
+        <p class="contact-info">
+          Denver, CO | +1 720-314-4399 | <a href="mailto:pharikiran.ed@gmail.com">pharikiran.ed@gmail.com</a>
+        </p>
+        <p class="contact-links">
+          <a href="https://linkedin.com/in/harikiranpendurthi" target="_blank">linkedin.com/in/harikiranpendurthi</a>
+        </p>
+      </header>
 
-    <header>
-      <h1>Hari Kiran</h1>
-      <p class="role">Software & Data Engineer</p>
-      <p>
-        I am an international student in the US, specializing in building scalable software 
-        solutions and data pipelines. I am currently seeking opportunities in Software and Data Engineering.
-      </p>
-      <div>
-        <a href="https://github.com/harikiran99" class="contact-link">GitHub</a>
-        <a href="mailto:your-email@example.com" class="contact-link">Email</a>
-        <a href="#" class="contact-link">LinkedIn</a>
-      </div>
-    </header>
+      <section>
+        <h2>Professional Summary</h2>
+        <p>
+          Results-oriented <strong>Software Developer</strong> with a Master’s in Computer Science and expertise in <strong>Python</strong>, <strong>SQL</strong>, and <strong>AWS</strong>. Proven track record of optimizing data ingestion workflows by <strong>40%</strong> and reducing query execution time by <strong>50%</strong> through scalable pipeline architecture. Skilled in leveraging <strong>Machine Learning</strong> and <strong>CI/CD</strong> processes to solve complex business problems and drive operational efficiency.
+        </p>
+      </section>
 
-    <section>
-      <h2>Technical Skills</h2>
-      <ul>
-        <li><strong>Languages:</strong> Python, Java, JavaScript, SQL, C++</li>
-        <li><strong>Data Engineering:</strong> Spark, Hadoop, Airflow, ETL Pipelines</li>
-        <li><strong>Web Development:</strong> React, Node.js, HTML/CSS</li>
-        <li><strong>Tools:</strong> Git, Docker, AWS, Linux</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+          <li><strong>Languages:</strong> Python, Java, JavaScript, Unix Scripting, Node.js, HTML/CSS.</li>
+          <li><strong>Frameworks & Libraries:</strong> Pandas, Spring Boot, React, Scikit-Learn, Jupyter.</li>
+          <li><strong>Cloud & DevOps:</strong> AWS (EC2, S3, Lambda, RDS), Docker, Kubernetes, Jenkins, Git.</li>
+          <li><strong>Databases & Tools:</strong> MySQL, PostgreSQL, Oracle, Tableau, PowerBI, Salesforce, JIRA.</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Featured Projects</h2>
-      
-      <h3>Project Name 1</h3>
-      <p>
-        A brief description of a project you built. Mention the tech stack used (e.g., Python, Flask).
-        <br>
-        <a href="#" style="color: #0066cc;">View Source Code</a>
-      </p>
+      <section>
+        <h2>Professional Experience</h2>
+        
+        <div class="job">
+          <div class="job-header">
+            <h3>TecZone</h3>
+            <span>Jul 2025 – Present</span>
+          </div>
+          <div class="job-sub">
+            <span class="role">Software Developer</span>
+            <span class="location">USA</span>
+          </div>
+          <ul>
+            <li>Designed and built scalable <strong>ETL pipelines</strong> using <strong>Python</strong> and <strong>SQL</strong> to automate data ingestion, ensuring reliable data flow and reducing manual data intervention by <strong>40%</strong>.</li>
+            <li>Optimized data processing workflows by implementing efficient <strong>Pandas</strong> logic, successfully reducing script execution time by <strong>35%</strong> and improving operational cost efficiency.</li>
+            <li>Identified and resolved backend data discrepancies to standardize data practices across services, executing complex <strong>SQL queries</strong> to prepare high-quality, clean datasets.</li>
+          </ul>
+        </div>
 
-      <h3>Project Name 2</h3>
-      <p>
-        A data analysis project that processes large datasets to find trends.
-        <br>
-        <a href="#" style="color: #0066cc;">View Source Code</a>
-      </p>
-    </section>
+        <div class="job">
+          <div class="job-header">
+            <h3>Information Technology Warehouse LLC</h3>
+            <span>Aug 2024 – Jun 2025</span>
+          </div>
+          <div class="job-sub">
+            <span class="role">Software Engineer</span>
+            <span class="location">USA</span>
+          </div>
+          <ul>
+            <li>Engineired scalable real-time data ingestion pipelines to collect streaming big data into <strong>MySQL</strong>, reducing data latency by <strong>20%</strong> and enabling instant exploratory analytics.</li>
+            <li>Developed and deployed <strong>Machine Learning models</strong> using <strong>Python</strong> to predict customer behavior and product success pre-launch, directly supporting strategic decision-making.</li>
+            <li>Designed automated <strong>Tableau Prep</strong> workflows to resolve discrepancies and ensure dataset reliability for visualization dashboards.</li>
+          </ul>
+        </div>
 
+        <div class="job">
+          <div class="job-header">
+            <h3>University of Colorado Denver</h3>
+            <span>Jan 2023 – May 2024</span>
+          </div>
+          <div class="job-sub">
+            <span class="role">Graduate Assistant</span>
+            <span class="location">Denver, CO</span>
+          </div>
+          <ul>
+            <li>Developed custom <strong>Python scripts</strong> and batch processes to automate manual administrative tasks, successfully reducing the team's repetitive workload by <strong>30%</strong>.</li>
+            <li>Streamlined technical support workflows, reducing issue resolution time by <strong>40%</strong> through process optimization.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <h3>Capgemini</h3>
+            <span>Jun 2021 – Jun 2022</span>
+          </div>
+          <div class="job-sub">
+            <span class="role">Software Analyst</span>
+            <span class="location">India</span>
+          </div>
+          <ul>
+            <li>Engineered and optimized complex <strong>SQL queries</strong> for large-scale datasets, reducing query execution time and system latency by <strong>50%</strong>.</li>
+            <li>Built and maintained robust <strong>CI/CD pipelines</strong> using <strong>Git</strong> to automate deployment processes, reducing deployment time by <strong>40%</strong> while ensuring consistent delivery.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Academic Projects</h2>
+        
+        <div class="project">
+          <div class="project-header">
+            <h3>Census Data ETL and Predictive Modeling Pipeline</h3>
+            <span>Python, Pandas, Scikit-Learn</span>
+          </div>
+          <ul>
+            <li>Engineered a robust data preprocessing pipeline for <strong>48,000+ records</strong> using <strong>Pandas</strong>, implementing Label Encoding and MinMaxScaler normalization to optimize feature scaling.</li>
+            <li>Tuned a <strong>Gradient Boosting Classifier</strong> through hyperparameter optimization, achieving <strong>87% accuracy</strong> and a <strong>0.92 F1 score</strong>, significantly outperforming baseline Logistic Regression models.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-header">
+            <h3>Student Academic Performance Prediction</h3>
+            <span>Python, Pandas, SVM</span>
+          </div>
+          <ul>
+            <li>Engineered a data preprocessing pipeline using <strong>Pandas</strong> to clean raw demographic data, implementing <strong>one-hot encoding</strong> and outlier detection for machine learning integration.</li>
+            <li>Developed a predictive <strong>SVM classification system</strong> to identify at-risk students, utilizing <strong>GridSearchCV</strong> for hyperparameter tuning and <strong>SMOTE</strong> to resolve class imbalance, achieving <strong>80% accuracy</strong>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="education-item">
+          <div class="edu-header">
+            <h3>University of Colorado Denver</h3>
+            <span>Denver, CO</span>
+          </div>
+          <div class="edu-sub">
+            <span>Master of Science in Computer Science</span>
+            <span>May 2024</span>
+          </div>
+          <p class="gpa">GPA: 3.87/4.0</p>
+        </div>
+
+        <div class="education-item">
+          <div class="edu-header">
+            <h3>Koneru Lakshmaiah Education Foundation</h3>
+            <span>India</span>
+          </div>
+          <div class="edu-sub">
+            <span>Bachelor of Technology in Computer Science</span>
+            <span>Apr 2021</span>
+          </div>
+          <p class="gpa">GPA: 8.41/10.0</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Certifications</h2>
+        <ul class="cert-list">
+          <li>AWS Certified Solutions Architect – Associate</li>
+          <li>Salesforce Certified Administrator & Salesforce Certified AI Associate</li>
+          <li>Automation Anywhere Certified RPA Professional</li>
+          <li>MTA Security Fundamentals</li>
+        </ul>
+      </section>
+
+    </div>
   </body>
 </html>
+
+<style>
+  /* GLOBAL STYLES */
+  body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  /* CONTAINER */
+  .resume-container {
+    background: #fff;
+    width: 850px; /* Standard US Letter width approx */
+    margin: 0 auto;
+    padding: 40px 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  /* HEADER */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #000;
+  }
+
+  .contact-info, .contact-links {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* SECTIONS */
+  section {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #333;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: #000;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+  }
+
+  /* LISTS & TEXT */
+  ul {
+    margin: 5px 0 10px 18px;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+  }
+
+  /* EXPERIENCE & PROJECTS */
+  .job, .project, .education-item {
+    margin-bottom: 15px;
+  }
+
+  .job-header, .edu-header, .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .job-sub, .edu-sub {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .project-header span {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  
+  .skills-list {
+    list-style: none;
+    margin: 0;
+  }
+  
+  .skills-list li {
+    margin-bottom: 5px;
+  }
+
+  .cert-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  .cert-list li::before {
+    content: "• ";
+    font-weight: bold;
+  }
+  
+  /* RESPONSIVE (Simple) */
+  @media (max-width: 900px) {
+    .resume-container {
+      width: 100%;
+      box-shadow: none;
+      padding: 20px;
+    }
+  }
+</style>
