@@ -1,13 +1,13 @@
 ---
-// src/pages/index.astro
+import { config } from '../config';
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hari Kiran Pendurthi | Software Developer</title>
-    <meta name="description" content="Portfolio of Hari Kiran Pendurthi - Software Developer" />
+    <title>{config.personalInfo.name} | {config.personalInfo.title}</title>
+    <meta name="description" content={`Portfolio of ${config.personalInfo.name}`} />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
@@ -32,9 +32,9 @@
 
     <div id="lead">
         <div id="lead-content">
-            <h1>Hari Kiran Pendurthi</h1>
-            <h2>Software Developer</h2>
-            <a href="/resume.pdf" class="btn-rounded-white">Download Resume</a>
+            <h1>{config.personalInfo.name}</h1>
+            <h2>{config.personalInfo.title}</h2>
+            <a href={config.personalInfo.resumeUrl} class="btn-rounded-white">Download Resume</a>
         </div>
         <div id="lead-overlay"></div>
         <div id="lead-down">
@@ -48,12 +48,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h2 class="heading">About Me</h2>
+                    <h2 class="heading">{config.about.header}</h2>
                 </div>
                 <div class="col-md-8">
-                    <p>
-                        Results-oriented <strong>Software Developer</strong> with a Master’s in Computer Science and expertise in <strong>Python</strong>, <strong>SQL</strong>, and <strong>AWS</strong>. Proven track record of optimizing data ingestion workflows by <strong>40%</strong> and reducing query execution time by <strong>50%</strong> through scalable pipeline architecture. Skilled in leveraging <strong>Machine Learning</strong> and <strong>CI/CD</strong> processes to solve complex business problems and drive operational efficiency.
-                    </p>
+                    <p>{config.about.description}</p>
                 </div>
             </div>
             
@@ -63,17 +61,9 @@
                 </div>
                 <div class="col-md-8">
                     <ul class="skills-list">
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>SQL</li>
-                        <li>AWS (EC2, S3, RDS)</li>
-                        <li>React</li>
-                        <li>Pandas</li>
-                        <li>Docker</li>
-                        <li>Kubernetes</li>
-                        <li>Spark</li>
-                        <li>Git</li>
-                        <li>CI/CD</li>
+                        {config.skills.map(skill => (
+                            <li>{skill}</li>
+                        ))}
                     </ul>
                 </div>
             </div>
@@ -83,44 +73,17 @@
     <div id="experience" class="background-alt">
         <h2 class="heading">Experience</h2>
         <div id="experience-timeline">
-            
-            <div data-date="Jul 2025 – Present">
-                <h3>TecZone</h3>
-                <h4>Software Developer</h4>
-                <ul>
-                    <li>Designed and built scalable ETL pipelines using Python and SQL to automate data ingestion, reducing manual intervention by 40%.</li>
-                    <li>Optimized data processing workflows by implementing efficient Pandas logic, reducing script execution time by 35%.</li>
-                    <li>Identified and resolved backend data discrepancies to standardize data practices across services.</li>
-                </ul>
-            </div>
-
-            <div data-date="Aug 2024 – Jun 2025">
-                <h3>Information Technology Warehouse LLC</h3>
-                <h4>Software Engineer</h4>
-                <ul>
-                    <li>Engineered scalable real-time data ingestion pipelines to collect streaming big data into MySQL, reducing latency by 20%.</li>
-                    <li>Developed and deployed Machine Learning models using Python to predict customer behavior and product success.</li>
-                    <li>Designed automated Tableau Prep workflows to resolve discrepancies and ensure dataset reliability.</li>
-                </ul>
-            </div>
-
-            <div data-date="Jan 2023 – May 2024">
-                <h3>University of Colorado Denver</h3>
-                <h4>Graduate Assistant</h4>
-                <ul>
-                    <li>Developed custom Python scripts and batch processes to automate manual administrative tasks, reducing repetitive workload by 30%.</li>
-                    <li>Streamlined technical support workflows, reducing issue resolution time by 40%.</li>
-                </ul>
-            </div>
-
-            <div data-date="Jun 2021 – Jun 2022">
-                <h3>Capgemini</h3>
-                <h4>Software Analyst</h4>
-                <ul>
-                    <li>Engineered and optimized complex SQL queries for large-scale datasets, reducing query execution time by 50%.</li>
-                    <li>Built and maintained robust CI/CD pipelines using Git to automate deployment processes, reducing deployment time by 40%.</li>
-                </ul>
-            </div>
+            {config.experience.map(job => (
+                <div data-date={job.date}>
+                    <h3>{job.company}</h3>
+                    <h4>{job.title}</h4>
+                    <ul>
+                        {job.description.map(point => (
+                            <li>{point}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
     </div>
 
@@ -128,35 +91,20 @@
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="project-grid">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <i class="fa fa-code"></i>
+                {config.projects.map(project => (
+                    <div class="project shadow-large">
+                        <div class="project-image">
+                            <i class={`fa ${project.icon}`}></i>
+                        </div>
+                        <div class="project-info">
+                            <h3>{project.title}</h3>
+                            <p>{project.description}</p>
+                            {project.tags.map(tag => (
+                                <span class="tag">{tag}</span>
+                            ))}
+                        </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Census Data ETL & ML Pipeline</h3>
-                        <p>
-                            Engineered a robust data preprocessing pipeline for 48,000+ records using Pandas. Tuned a Gradient Boosting Classifier achieving 87% accuracy and a 0.92 F1 score.
-                        </p>
-                        <span class="tag">Python</span>
-                        <span class="tag">Pandas</span>
-                        <span class="tag">Scikit-Learn</span>
-                    </div>
-                </div>
-                
-                <div class="project shadow-large">
-                    <div class="project-image">
-                         <i class="fa fa-graduation-cap"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Student Performance Prediction</h3>
-                        <p>
-                            Developed a predictive SVM classification system to identify at-risk students. Utilized GridSearchCV for hyperparameter tuning and SMOTE to resolve class imbalance.
-                        </p>
-                        <span class="tag">Python</span>
-                        <span class="tag">SVM</span>
-                        <span class="tag">Data Analysis</span>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     </div>
@@ -164,29 +112,23 @@
     <div id="education" class="background-alt">
         <h2 class="heading">Education</h2>
         
-        <div class="education-block">
-            <h3>University of Colorado Denver</h3>
-            <span class="education-date">May 2024</span>
-            <h4>Master of Science in Computer Science</h4>
-            <p>GPA: 3.87/4.0</p>
-        </div>
-
-        <div class="education-block">
-            <h3>Koneru Lakshmaiah Education Foundation</h3>
-            <span class="education-date">Apr 2021</span>
-            <h4>Bachelor of Technology in Computer Science</h4>
-            <p>GPA: 8.41/10.0</p>
-        </div>
+        {config.education.map(edu => (
+            <div class="education-block">
+                <h3>{edu.school}</h3>
+                <span class="education-date">{edu.date}</span>
+                <h4>{edu.degree}</h4>
+                <p>{edu.details}</p>
+            </div>
+        ))}
     </div>
     
     <div id="certifications" class="background-white">
         <div class="container">
             <h2 class="heading">Certifications</h2>
              <ul class="cert-list">
-                <li>AWS Certified Solutions Architect – Associate</li>
-                <li>Salesforce Certified Administrator</li>
-                <li>Salesforce Certified AI Associate</li>
-                <li>Automation Anywhere Certified RPA Professional</li>
+                {config.certifications.map(cert => (
+                    <li>{cert}</li>
+                ))}
             </ul>
         </div>
     </div>
@@ -195,11 +137,12 @@
         <h2>Get in Touch</h2>
         <div id="contact-form">
             <p>
-                <a href="mailto:pharikiran.ed@gmail.com" class="btn-rounded-white shadow-medium">pharikiran.ed@gmail.com</a>
+                <a href={`mailto:${config.personalInfo.email}`} class="btn-rounded-white shadow-medium">{config.personalInfo.email}</a>
             </p>
             <div class="social">
-                <a href="https://linkedin.com/in/harikiranpendurthi" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                {config.socials.linkedin && <a href={config.socials.linkedin} target="_blank"><i class="fab fa-linkedin"></i></a>}
+                {config.socials.github && <a href={config.socials.github} target="_blank"><i class="fab fa-github"></i></a>}
+                {config.socials.twitter && <a href={config.socials.twitter} target="_blank"><i class="fab fa-twitter"></i></a>}
             </div>
         </div>
     </div>
@@ -208,7 +151,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-5 copyright">
-                    <p>Copyright &copy; 2025 Hari Kiran Pendurthi</p>
+                    <p>Copyright &copy; 2025 {config.personalInfo.name}</p>
                 </div>
                 <div class="col-sm-2 top">
                     <span id="to-top">
@@ -219,17 +162,50 @@
         </div>
     </footer>
 
+    <script>
+      const mobileMenuOpen = document.getElementById('mobile-menu-open');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+      const menu = document.getElementById('menu');
+
+      if (mobileMenuOpen && mobileMenuClose && menu) {
+        mobileMenuOpen.addEventListener('click', () => {
+          menu.classList.add('active');
+          mobileMenuOpen.style.display = 'none';
+          mobileMenuClose.style.display = 'block';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+          menu.classList.remove('active');
+          mobileMenuOpen.style.display = 'block';
+          mobileMenuClose.style.display = 'none';
+        });
+      }
+      
+      // Close menu when link is clicked (mobile)
+      document.querySelectorAll('#menu a').forEach(link => {
+        link.addEventListener('click', () => {
+             if(window.innerWidth <= 768) {
+                 menu.classList.remove('active');
+                 mobileMenuOpen.style.display = 'block';
+                 mobileMenuClose.style.display = 'none';
+             }
+        });
+      });
+      
+      // Scroll to Top
+      document.getElementById('to-top')?.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>
 
-<style>
-/* DEV PORTFOLIO STYLE CSS 
-   Based on the clean, modern aesthetic of devportfolio themes
-*/
+<style define:vars={{ primary: config.colors.accent }}>
+/* DEV PORTFOLIO STYLE CSS */
 
 /* General */
 :root {
-    --primary: #3498db;
+    --primary: var(--primary); /* DYNAMIC COLOR FROM CONFIG */
     --text: #333;
     --bg-grey: #f2f2f5;
     --white: #fff;
@@ -277,12 +253,8 @@ ul { padding: 0; list-style: none; }
     background: var(--primary);
 }
 
-.background-alt {
-    background: var(--bg-grey);
-}
-.background-white {
-    background: var(--white);
-}
+.background-alt { background: var(--bg-grey); }
+.background-white { background: var(--white); }
 
 /* Header/Menu */
 header {
@@ -293,27 +265,14 @@ header {
     background: #fff;
     z-index: 100;
     padding: 15px;
-    display: none; /* Hidden on mobile by default logic, but simplifying here */
+    display: none;
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     text-align: center;
 }
-@media (min-width: 768px) {
-    header { display: block; }
-}
-header ul {
-    display: inline-block;
-    margin: 0;
-}
-header li {
-    display: inline-block;
-    margin: 0 15px;
-}
-header a {
-    color: #333;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    font-weight: 700;
-}
+@media (min-width: 768px) { header { display: block; } }
+header ul { display: inline-block; margin: 0; }
+header li { display: inline-block; margin: 0 15px; }
+header a { color: #333; text-transform: uppercase; font-size: 0.9em; font-weight: 700; }
 
 /* Hero Section */
 #lead {
@@ -329,11 +288,7 @@ header a {
     text-align: center;
     padding: 15px;
 }
-
-#lead-content {
-    z-index: 10;
-}
-
+#lead-content { z-index: 10; }
 #lead h1 {
     font-size: 3.5em;
     font-weight: 900;
@@ -342,14 +297,12 @@ header a {
     color: #2c3e50;
     text-transform: uppercase;
 }
-
 #lead h2 {
     font-size: 1.5em;
     font-weight: 300;
     margin: 0 0 30px 0;
     color: #7f8c8d;
 }
-
 .btn-rounded-white {
     display: inline-block;
     color: var(--primary);
@@ -361,17 +314,23 @@ header a {
     text-transform: uppercase;
     background: transparent;
 }
-.btn-rounded-white:hover {
-    background: var(--primary);
-    color: #fff;
-    text-decoration: none;
+.btn-rounded-white:hover { background: var(--primary); color: #fff; text-decoration: none; }
+#lead-down {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: var(--primary);
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-15px);}
+    60% {transform: translateY(-7px);}
 }
 
 /* About Section */
-#about {
-    padding: 75px 15px;
-    border-bottom: 1px solid #dcd9d9;
-}
+#about { padding: 75px 15px; border-bottom: 1px solid #dcd9d9; }
 .skills-row { margin-top: 30px; }
 .skills-list li {
     display: inline-block;
@@ -385,10 +344,7 @@ header a {
 }
 
 /* Experience Section */
-#experience {
-    padding: 50px 15px;
-    text-align: center;
-}
+#experience { padding: 50px 15px; text-align: center; }
 #experience-timeline {
     max-width: 800px;
     margin: 30px auto 0;
@@ -396,10 +352,7 @@ header a {
     border-left: 2px solid var(--primary);
     padding-left: 30px;
 }
-#experience-timeline div {
-    position: relative;
-    margin-bottom: 40px;
-}
+#experience-timeline div { position: relative; margin-bottom: 40px; }
 #experience-timeline div::before {
     content: '';
     position: absolute;
@@ -411,28 +364,12 @@ header a {
     background: #fff;
     border: 3px solid var(--primary);
 }
-#experience-timeline h3 {
-    font-size: 1.4em;
-    margin: 0 0 5px 0;
-    color: #333;
-}
-#experience-timeline h4 {
-    font-size: 1.1em;
-    margin: 0 0 10px 0;
-    font-weight: 300;
-    color: #777;
-}
-#experience-timeline ul {
-    list-style: disc;
-    margin-left: 20px;
-    color: #555;
-}
+#experience-timeline h3 { font-size: 1.4em; margin: 0 0 5px 0; color: #333; }
+#experience-timeline h4 { font-size: 1.1em; margin: 0 0 10px 0; font-weight: 300; color: #777; }
+#experience-timeline ul { list-style: disc; margin-left: 20px; color: #555; }
 
 /* Projects Section */
-#projects {
-    padding: 75px 15px;
-    text-align: center;
-}
+#projects { padding: 75px 15px; text-align: center; }
 .project-grid {
     display: flex;
     flex-wrap: wrap;
@@ -457,22 +394,10 @@ header a {
     align-items: center;
     justify-content: center;
 }
-.project-image i {
-    font-size: 50px;
-    color: rgba(255,255,255,0.7);
-}
-.project-info {
-    padding: 20px;
-}
-.project-info h3 {
-    margin: 0 0 10px 0;
-    color: var(--primary);
-}
-.project-info p {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 15px;
-}
+.project-image i { font-size: 50px; color: rgba(255,255,255,0.7); }
+.project-info { padding: 20px; }
+.project-info h3 { margin: 0 0 10px 0; color: var(--primary); }
+.project-info p { font-size: 0.9em; color: #666; margin-bottom: 15px; }
 .tag {
     display: inline-block;
     font-size: 0.75em;
@@ -484,10 +409,7 @@ header a {
 }
 
 /* Education */
-#education {
-    padding: 50px 15px;
-    text-align: center;
-}
+#education { padding: 50px 15px; text-align: center; }
 .education-block {
     max-width: 700px;
     margin: 0 auto 30px auto;
@@ -497,40 +419,15 @@ header a {
     border-left: 5px solid var(--primary);
     text-align: left;
 }
-.education-block h3 {
-    margin: 0;
-    font-size: 1.2em;
-}
-.education-date {
-    float: right;
-    color: #888;
-    font-size: 0.9em;
-}
-.education-block h4 {
-    margin: 5px 0 10px 0;
-    font-weight: 400;
-    color: #555;
-}
+.education-block h3 { margin: 0; font-size: 1.2em; }
+.education-date { float: right; color: #888; font-size: 0.9em; }
+.education-block h4 { margin: 5px 0 10px 0; font-weight: 400; color: #555; }
 
 /* Certifications */
-#certifications {
-    padding: 50px 15px;
-    text-align: center;
-}
-.cert-list {
-    display: inline-block;
-    text-align: left;
-}
-.cert-list li {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
-.cert-list li::before {
-    content: "✓";
-    color: var(--primary);
-    margin-right: 10px;
-    font-weight: bold;
-}
+#certifications { padding: 50px 15px; text-align: center; }
+.cert-list { display: inline-block; text-align: left; }
+.cert-list li { margin-bottom: 10px; font-size: 1.1em; }
+.cert-list li::before { content: "✓"; color: var(--primary); margin-right: 10px; font-weight: bold; }
 
 /* Contact */
 #contact {
@@ -539,45 +436,65 @@ header a {
     padding: 75px 15px;
     text-align: center;
 }
-#contact h2 {
-    color: #fff;
-    border-color: #fff;
-}
-#contact-form {
-    margin-top: 30px;
-}
-.social {
-    margin-top: 30px;
-}
-.social a {
-    display: inline-block;
-    margin: 0 15px;
-    color: #fff;
-    font-size: 1.5em;
-}
-.social a:hover {
-    opacity: 0.8;
-}
+#contact h2 { color: #fff; border-color: #fff; }
+#contact-form { margin-top: 30px; }
+.social { margin-top: 30px; }
+.social a { display: inline-block; margin: 0 15px; color: #fff; font-size: 1.5em; }
 
 /* Footer */
-footer {
-    background: #222;
-    color: #777;
-    padding: 20px 0;
-    font-size: 0.8em;
-    text-align: center;
-}
+footer { background: #222; color: #777; padding: 20px 0; font-size: 0.8em; text-align: center; }
+#to-top { cursor: pointer; }
 
 /* Utilities */
 .shadow-large { box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 .shadow-medium { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-/* Responsive adjustments */
+/* Mobile Menu */
 @media (max-width: 768px) {
+    #menu {
+      display: none;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 99;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #menu.active { display: flex; }
+    #menu li { display: block; margin: 20px 0; }
+    #mobile-menu-open {
+      display: block;
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 100;
+      color: #333;
+      font-size: 24px;
+      cursor: pointer;
+      background: #fff;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    #mobile-menu-close {
+      display: none;
+      position: fixed;
+      right: 15px;
+      top: 15px;
+      z-index: 100;
+      font-size: 24px;
+      cursor: pointer;
+    }
     #lead h1 { font-size: 2.5em; }
     .education-date { float: none; display: block; margin-bottom: 5px; }
     .col-md-4, .col-md-8 { width: 100%; display: block; }
     .row { display: block; }
-    #about { text-align: center; }
+}
+@media (min-width: 769px) {
+    #mobile-menu-open, #mobile-menu-close { display: none; }
 }
 </style>
