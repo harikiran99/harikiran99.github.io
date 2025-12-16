@@ -1,92 +1,118 @@
-export const siteConfig = {
-  name: "Ryan Fitzgerald",
-  title: "Senior Software Engineer",
-  description: "Portfolio website of Ryan Fitzgerald",
-  accentColor: "#1d4ed8",
-  social: {
-    email: "your-email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/rfitzio",
-    github: "https://github.com/RyanFitzgerald",
+// src/config.ts
+
+export const config = {
+  personalInfo: {
+    name: "Hari Kiran Pendurthi",
+    title: "Software Developer",
+    location: "Denver, CO",
+    email: "pharikiran.ed@gmail.com",
+    phone: "+1 720-314-4399",
+    resumeUrl: "/resume.pdf", // Ensure you have a file named resume.pdf in your public folder
   },
-  aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
-  skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
-  projects: [
-    {
-      name: "AI Dev Roundup Newsletter",
-      description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
-    {
-      name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
-      description:
-        "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
-      link: "https://fullstackextensions.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
-    {
-      name: "ExtensionKit",
-      description:
-        "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
-      link: "https://extensionkit.io/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
+
+  // CHANGE THIS COLOR to update the theme site-wide
+  colors: {
+    accent: "#3498db", // The classic DevPortfolio Blue
+  },
+
+  socials: {
+    linkedin: "https://linkedin.com/in/harikiranpendurthi",
+    github: "https://github.com", // Add your actual GitHub URL if available
+    // twitter: "https://twitter.com/yourhandle", // Optional
+  },
+
+  about: {
+    header: "About Me",
+    description: `Results-oriented Software Developer with a Master’s in Computer Science and expertise in Python, SQL, and AWS. Proven track record of optimizing data ingestion workflows by 40% and reducing query execution time by 50% through scalable pipeline architecture. Skilled in leveraging Machine Learning and CI/CD processes to solve complex business problems and drive operational efficiency.`,
+  },
+
+  skills: [
+    "Python", "Java", "SQL", "AWS (EC2, S3, RDS)", 
+    "React", "Pandas", "Docker", "Kubernetes", 
+    "Spark", "Git", "CI/CD", "Node.js"
   ],
+
   experience: [
     {
-      company: "Tech Company",
-      title: "Senior Software Engineer",
-      dateRange: "Jan 2022 - Present",
-      bullets: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Reduced API response times by 40% through optimization",
-        "Mentored team of 5 junior developers",
-      ],
+      company: "TecZone",
+      title: "Software Developer",
+      date: "Jul 2025 – Present",
+      location: "USA",
+      description: [
+        "Designed and built scalable ETL pipelines using Python and SQL to automate data ingestion, reducing manual intervention by 40%.",
+        "Optimized data processing workflows by implementing efficient Pandas logic, reducing script execution time by 35%.",
+        "Identified and resolved backend data discrepancies to standardize data practices across services."
+      ]
     },
     {
-      company: "Startup Inc",
-      title: "Full Stack Developer",
-      dateRange: "Jun 2020 - Dec 2021",
-      bullets: [
-        "Built and launched MVP product from scratch using React and Node.js",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Collaborated with product team to define technical requirements",
-      ],
+      company: "Information Technology Warehouse LLC",
+      title: "Software Engineer",
+      date: "Aug 2024 – Jun 2025",
+      location: "USA",
+      description: [
+        "Engineered scalable real-time data ingestion pipelines to collect streaming big data into MySQL, reducing latency by 20%.",
+        "Developed and deployed Machine Learning models using Python to predict customer behavior and product success.",
+        "Designed automated Tableau Prep workflows to resolve discrepancies and ensure dataset reliability."
+      ]
     },
     {
-      company: "Digital Agency",
-      title: "Frontend Developer",
-      dateRange: "Aug 2018 - May 2020",
-      bullets: [
-        "Developed responsive web applications for 20+ clients",
-        "Improved site performance scores by 35% on average",
-        "Introduced modern JavaScript frameworks to legacy codebases",
-      ],
+      company: "University of Colorado Denver",
+      title: "Graduate Assistant",
+      date: "Jan 2023 – May 2024",
+      location: "Denver, CO",
+      description: [
+        "Developed custom Python scripts and batch processes to automate manual administrative tasks, reducing repetitive workload by 30%.",
+        "Streamlined technical support workflows, reducing issue resolution time by 40%."
+      ]
     },
+    {
+      company: "Capgemini",
+      title: "Software Analyst",
+      date: "Jun 2021 – Jun 2022",
+      location: "India",
+      description: [
+        "Engineered and optimized complex SQL queries for large-scale datasets, reducing query execution time by 50%.",
+        "Built and maintained robust CI/CD pipelines using Git to automate deployment processes, reducing deployment time by 40%."
+      ]
+    }
   ],
+
+  projects: [
+    {
+      title: "Census Data ETL & ML Pipeline",
+      description: "Engineered a robust data preprocessing pipeline for 48,000+ records using Pandas. Tuned a Gradient Boosting Classifier achieving 87% accuracy and a 0.92 F1 score.",
+      tags: ["Python", "Pandas", "Scikit-Learn"],
+      link: "#", // Add project link if available
+      icon: "fa-code"
+    },
+    {
+      title: "Student Performance Prediction",
+      description: "Developed a predictive SVM classification system to identify at-risk students. Utilized GridSearchCV for hyperparameter tuning and SMOTE to resolve class imbalance.",
+      tags: ["Python", "SVM", "Data Analysis"],
+      link: "#",
+      icon: "fa-graduation-cap"
+    }
+  ],
+
   education: [
     {
-      school: "University Name",
-      degree: "Bachelor of Science in Computer Science",
-      dateRange: "2014 - 2018",
-      achievements: [
-        "Graduated Magna Cum Laude with 3.8 GPA",
-        "Dean's List all semesters",
-        "President of Computer Science Club",
-      ],
+      school: "University of Colorado Denver",
+      degree: "Master of Science in Computer Science",
+      date: "May 2024",
+      details: "GPA: 3.87/4.0"
     },
     {
-      school: "Online Platform",
-      degree: "Full Stack Development Certificate",
-      dateRange: "2019",
-      achievements: [
-        "Completed 500+ hours of coursework",
-        "Built 10+ portfolio projects",
-        "Specialized in React and Node.js",
-      ],
-    },
+      school: "Koneru Lakshmaiah Education Foundation",
+      degree: "Bachelor of Technology in Computer Science",
+      date: "Apr 2021",
+      details: "GPA: 8.41/10.0"
+    }
   ],
+
+  certifications: [
+    "AWS Certified Solutions Architect – Associate",
+    "Salesforce Certified Administrator",
+    "Salesforce Certified AI Associate",
+    "Automation Anywhere Certified RPA Professional"
+  ]
 };
