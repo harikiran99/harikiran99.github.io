@@ -1,39 +1,73 @@
 ---
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
-import Experience from "../components/Experience.astro";
-import Education from "../components/Education.astro";
-import Footer from "../components/Footer.astro";
-import { siteConfig } from "../config";
-import "../styles/global.css";
+// This area is for JavaScript setup
+const pageTitle = "Hari Kiran | Portfolio";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={siteConfig.description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <title>{siteConfig.name} - {siteConfig.title}</title>
+    <title>{pageTitle}</title>
+    <style>
+      /* Simple styling to make it look professional */
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        line-height: 1.6;
+        color: #333;
+      }
+      h1 { font-size: 2.5rem; margin-bottom: 0.2rem; color: #111; }
+      h2 { margin-top: 2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+      .role { color: #666; font-size: 1.25rem; font-weight: 500; margin-top: 0; }
+      .contact-link { margin-right: 1rem; color: #0066cc; text-decoration: none; }
+      .contact-link:hover { text-decoration: underline; }
+    </style>
   </head>
   <body>
-    <Header />
+
+    <header>
+      <h1>Hari Kiran</h1>
+      <p class="role">Software & Data Engineer</p>
+      <p>
+        I am an international student in the US, specializing in building scalable software 
+        solutions and data pipelines. I am currently seeking opportunities in Software and Data Engineering.
+      </p>
+      <div>
+        <a href="https://github.com/harikiran99" class="contact-link">GitHub</a>
+        <a href="mailto:your-email@example.com" class="contact-link">Email</a>
+        <a href="#" class="contact-link">LinkedIn</a>
+      </div>
+    </header>
+
     <section>
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Education />
+      <h2>Technical Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, Java, JavaScript, SQL, C++</li>
+        <li><strong>Data Engineering:</strong> Spark, Hadoop, Airflow, ETL Pipelines</li>
+        <li><strong>Web Development:</strong> React, Node.js, HTML/CSS</li>
+        <li><strong>Tools:</strong> Git, Docker, AWS, Linux</li>
+      </ul>
     </section>
-    <Footer />
+
+    <section>
+      <h2>Featured Projects</h2>
+      
+      <h3>Project Name 1</h3>
+      <p>
+        A brief description of a project you built. Mention the tech stack used (e.g., Python, Flask).
+        <br>
+        <a href="#" style="color: #0066cc;">View Source Code</a>
+      </p>
+
+      <h3>Project Name 2</h3>
+      <p>
+        A data analysis project that processes large datasets to find trends.
+        <br>
+        <a href="#" style="color: #0066cc;">View Source Code</a>
+      </p>
+    </section>
+
   </body>
 </html>
