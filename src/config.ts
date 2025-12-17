@@ -3,7 +3,7 @@ import type { SiteConfig } from "./types"; // The theme likely imports types, if
 export const siteConfig: SiteConfig = {
   // PERSONAL INFO
   name: "Hari Kiran Pendurthi",
-  title: "Software Developer",
+  title: "Software Developer | MS in Computer Science",
   description: "Portfolio of Hari Kiran Pendurthi - Software Developer",
   
   // THEME COLOR (The blue you liked)
@@ -12,12 +12,12 @@ export const siteConfig: SiteConfig = {
   // SOCIAL LINKS
   social: {
     linkedin: "https://linkedin.com/in/harikiranpendurthi",
-    github: "https://github.com", // Add your actual GitHub if you have one
+    github: "https://github.com/harikiran99", 
     email: "pharikiran.ed@gmail.com",
   },
 
   // ABOUT SECTION
-  aboutMe: "Results-oriented Software Developer with a Master’s in Computer Science and expertise in Python, SQL, and AWS. Proven track record of optimizing data ingestion workflows by 40% and reducing query execution time by 50% through scalable pipeline architecture. Skilled in leveraging Machine Learning and CI/CD processes to solve complex business problems and drive operational efficiency.",
+  aboutMe: "Software Developer with a knack for efficiency and a Master's in Computer Science. I specialize in optimizing workflows and building cloud infrastructure that helps teams move faster. I believe great software should be simple, scalable, and resilient. When I'm not coding, you can find me on the court or field playing tennis, football, and pickleball.",
 
   // SKILLS SECTION
   skills: [
@@ -44,7 +44,8 @@ export const siteConfig: SiteConfig = {
       bullets: [
         "Designed and built scalable ETL pipelines using Python and SQL to automate data ingestion, reducing manual intervention by 40%.",
         "Optimized data processing workflows by implementing efficient Pandas logic, reducing script execution time by 35%.",
-        "Identified and resolved backend data discrepancies to standardize data practices across services."
+        "Identified and resolved backend data discrepancies to standardize data practices across services.",
+        "Executed complex SQL queries to prepare high-quality, clean datasets for customer-facing teams."
       ]
     },
     {
@@ -54,7 +55,8 @@ export const siteConfig: SiteConfig = {
       bullets: [
         "Engineered scalable real-time data ingestion pipelines to collect streaming big data into MySQL, reducing latency by 20%.",
         "Developed and deployed Machine Learning models using Python to predict customer behavior and product success.",
-        "Designed automated Tableau Prep workflows to resolve discrepancies and ensure dataset reliability."
+        "Designed automated Tableau Prep workflows to resolve discrepancies and ensure dataset reliability.",
+        "Translated complex business problem statements into Python-based data analysis solutions, determining the optimal data fields and logic required to generate accurate, actionable outputs for the team."
       ]
     },
     {
@@ -63,7 +65,9 @@ export const siteConfig: SiteConfig = {
       dateRange: "Jan 2023 – May 2024",
       bullets: [
         "Developed custom Python scripts and batch processes to automate manual administrative tasks, reducing repetitive workload by 30%.",
-        "Streamlined technical support workflows, reducing issue resolution time by 40%."
+        "Streamlined technical support workflows, reducing issue resolution time by 40%.",
+        "Maintained database accuracy by performing regular validation checks to resolve discrepancies.",
+        "Utilized Git for version control of automation scripts and support tools, ensuring consistent code maintenance and collaborative development standards."
       ]
     },
     {
@@ -72,7 +76,9 @@ export const siteConfig: SiteConfig = {
       dateRange: "Jun 2021 – Jun 2022",
       bullets: [
         "Engineered and optimized complex SQL queries for large-scale datasets, reducing query execution time by 50%.",
-        "Built and maintained robust CI/CD pipelines using Git to automate deployment processes, reducing deployment time by 40%."
+        "Built and maintained robust CI/CD pipelines using Git to automate deployment processes, reducing deployment time by 40%.",
+        "Designed durable API-driven data integrations that standardized data exchange between systems and streamlined automated workflows.",
+        "Automated data processing tasks to increase team operational efficiency by 35%."
       ]
     }
   ],
@@ -90,6 +96,12 @@ export const siteConfig: SiteConfig = {
       description: "Developed a predictive SVM classification system to identify at-risk students. Utilized GridSearchCV for hyperparameter tuning and SMOTE to resolve class imbalance.",
       link: "#",
       skills: ["Python", "SVM", "Data Analysis"]
+    },
+    {
+      name: "Heart Pulse Monitoring and Notification System",
+      description: "Designed a cloud-based IoT system for real-time heartbeat monitoring using AWS and Twilio. Published at ICAIS 2021, the system achieved 99% uptime, scaled to support 1,000+ concurrent sensors, and delivered instant SMS alerts for abnormalities during real-world testing.",
+      link: "https://ieeexplore.ieee.org/document/9395825",
+      skills: ["Research", "Python", "AWS", "IoT", "Twilio", "Oracle"]
     }
   ],
 
