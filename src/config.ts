@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   description: "Portfolio of Hari Kiran Pendurthi - Software Developer",
   
   // THEME COLOR (The blue you liked)
-  accentColor: "#3498db", 
+  accentColor: "#003366", 
 
   // SOCIAL LINKS
   social: {
@@ -88,14 +88,14 @@ export const siteConfig: SiteConfig = {
     {
       name: "Census Data ETL & ML Pipeline",
       description: "Engineered a robust data preprocessing pipeline for 48,000+ records using Pandas. Tuned a Gradient Boosting Classifier achieving 87% accuracy and a 0.92 F1 score.",
-      link: "#", // Add actual link if available
-      skills: ["Python", "Pandas", "Scikit-Learn"]
+      link: "https://github.com/harikiran99/Income-Prediction_using-Data-Mining", // Add actual link if available
+      skills: ["Python", "Pandas", "Scikit-Learn", "Gradient Boosting", "Seaborn"]
     },
     {
       name: "Student Performance Prediction",
       description: "Developed a predictive SVM classification system to identify at-risk students. Utilized GridSearchCV for hyperparameter tuning and SMOTE to resolve class imbalance.",
-      link: "#",
-      skills: ["Python", "SVM", "Data Analysis"]
+      link: "https://github.com/harikiran99/Predicting-Factors-Influencing-Student-Academic-Performance-Using-ML",
+      skills: ["Machine Learning", "Python", "Pandas", "SVM", "Jupyter"]
     },
     {
       name: "Heart Pulse Monitoring and Notification System",
