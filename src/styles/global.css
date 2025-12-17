@@ -3,3 +3,14 @@
 body {
   font-family: 'IBM Plex Mono', monospace;
 }
+#lead {
+    position: relative;
+    height: 100vh;
+    min-height: 500px;
+    max-height: 1080px;
+    /* UPDATE THIS LINE BELOW */
+    background: url('/hero-bg.jpg') no-repeat center center scroll; 
+    background-size: cover;
+    padding: 15px;
+    overflow: hidden;
+}
