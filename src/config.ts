@@ -3,7 +3,7 @@ import type { SiteConfig } from "./types"; // The theme likely imports types, if
 export const siteConfig: SiteConfig = {
   // PERSONAL INFO
   name: "Hari Kiran Pendurthi",
-  title: "Software Developer | MS in Computer Science",
+  title: "Software Engineer | MS in Computer Science",
   description: "Portfolio of Hari Kiran Pendurthi - Software Developer",
   
   // THEME COLOR (The blue you liked)
@@ -17,7 +17,7 @@ export const siteConfig: SiteConfig = {
   },
 
   // ABOUT SECTION
-  aboutMe: "Software Developer with a knack for efficiency and a Master's in Computer Science. I specialize in optimizing workflows and building cloud infrastructure that helps teams move faster. I believe great software should be simple, scalable, and resilient. When I'm not coding, you can find me on the court or field playing tennis, football, and pickleball.",
+  aboutMe: "Software Engineer with a knack for efficiency and a Master's in Computer Science. I specialize in optimizing workflows and building cloud infrastructure that helps teams move faster. I believe great software should be simple, scalable, and resilient. When I'm not coding, you can find me on the court or field playing tennis, football, and pickleball.",
 
   // SKILLS SECTION
   skills: [
