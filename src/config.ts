@@ -100,6 +100,12 @@ export const siteConfig: SiteConfig = {
   // PROJECTS SECTION
   projects: [
     {
+      name: "Agentforce-Powered IT Helpdesk Automation",
+      description: "Designed and deployed an autonomous IT support agent using Salesforce Agentforce to handle tier-1 helpdesk requests — covering access issues, software requests, and hardware troubleshooting. Owned the full delivery lifecycle: documented business requirements, mapped escalation workflows, configured agent logic using Flows and Prompt Builder, and built a CRM Analytics dashboard tracking deflection rate, resolution time, and case volume. Achieved ~60% tier-1 deflection rate, reducing manual support load and delivering measurable operational efficiency gains.",
+      // Add actual link if available
+      skills: ["Salesforce", "Agentforce", "Data Cloud", "Flows", "LWC", "Prompt Builder"]
+    },    
+    {
       name: "Census Data ETL & ML Pipeline",
       description: "Engineered a robust data preprocessing pipeline for 48,000+ records using Pandas. Tuned a Gradient Boosting Classifier achieving 87% accuracy and a 0.92 F1 score.",
       link: "https://github.com/harikiran99/Income-Prediction_using-Data-Mining", // Add actual link if available
