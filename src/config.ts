@@ -38,9 +38,19 @@ export const siteConfig: SiteConfig = {
   // EXPERIENCE SECTION
   experience: [
     {
+    company: "TecZone",
+    title: "Software Developer",
+    dateRange: "Jul 2025 – Mar 2026",
+    bullets: [
+        "Translated stakeholder requirements into Salesforce platform specifications — producing workflow diagrams, user stories, and requirement docs directly consumed by the development team.",
+        "Built CRM Analytics dashboards tracking platform usage and service KPIs, delivering data-driven insights to business stakeholders through self-service visualizations.",
+        "Contributed across Agile sprint ceremonies — translating Gen AI workflow requirements into testable acceptance criteria and producing end-user training guides post-deployment.",
+        ]
+    },
+    {
       company: "TecZone",
       title: "Software Developer",
-      dateRange: "Jul 2025 – Present",
+      dateRange: "Jul 2025 – Mar 2026",
       bullets: [
         "Designed and built scalable ETL pipelines using Python and SQL to automate data ingestion, reducing manual intervention by 40%.",
         "Optimized data processing workflows by implementing efficient Pandas logic, reducing script execution time by 35%.",
